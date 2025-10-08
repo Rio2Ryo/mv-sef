@@ -100,14 +100,14 @@ export default function Hero() {
         </div>
 
       {/* Mother Vegetable Image */}
-<div className="max-w-4xl mx-auto mb-12 px-0 sm:px-4">
+<div className="w-[80%] sm:w-[85%] md:max-w-3xl mx-auto mb-12 px-0 sm:px-4">
   <div className="relative overflow-visible">
     <Image
       src={language === 'EN' ? "/project-overview_en.png" : "/project-overview_en.png"}
       alt="Mother Vegetable"
       width={800}
       height={533}
-      className="w-full h-auto rounded-lg shadow-2xl scale-125 sm:scale-110 md:scale-100 transform-origin-center"
+      className="w-full h-auto rounded-lg shadow-2xl"
       priority
     />
   </div>
