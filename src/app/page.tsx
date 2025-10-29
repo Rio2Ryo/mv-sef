@@ -36,7 +36,7 @@ export default function Home() {
         <Partners />
         <TokenInfo />{/* */}
         {/*<FAQ />*/}
-        <News />
+        {/*<News />*/}
         <Footer />
       </main>
     </>
