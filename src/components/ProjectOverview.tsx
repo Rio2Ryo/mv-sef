@@ -13,7 +13,7 @@ export default function ProjectOverview() {
             {t({ JP: '1. エグゼクティブサマリー', EN: '1. Executive Summary' })}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">
-            {t({ JP: '２つのオンリーワン', EN: 'Two Unique Elements' })}
+            {t({ JP: '２つのオンリーワン', EN: 'Two Only Ones' })}
           </h2>
           <div className="text-xs md:text-base text-gray-300 max-w-5xl mx-auto">
             {/* Desktop View */}
@@ -51,7 +51,7 @@ export default function ProjectOverview() {
               {/* 地球最初の生命体とは */}
               <div className="p-6 bg-green-500/10 border border-green-500/30 rounded-lg flex-grow">
                 <div className="flex justify-center my-6">
-                  <div className="w-60 h-60 rounded-2xl overflow-hidden shadow-lg">
+                  <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg">
                     <img
                       src="/mazavege.png"
                       alt="マザーベジタブル"
