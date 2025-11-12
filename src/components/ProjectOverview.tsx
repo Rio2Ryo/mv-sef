@@ -38,149 +38,118 @@ export default function ProjectOverview() {
         <div className="bg-gray-900/50 backdrop-blur-md border border-green-500/20 rounded-xl p-8 mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left Section - 01 */}
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col">
               <div className="flex items-center justify-center mb-8">
                 <div className="relative">
                   <div className="absolute inset-0  opacity-50"></div>
-                  <div className="relative bg-black px-6 py-3">
-                    <span className="text-5xl font-black bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">01</span>
+                  <div className="relative px-6 py-3">
+                    <span className="text-5xl font-black bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">Ⅰ</span>
                   </div>
                 </div>
               </div>
-
-              {/* 驚異的なカーボンクレジット */}
-              <div className="p-6 bg-green-500/10 border border-green-500/30 rounded-lg flex-grow flex flex-col h-full">
-                <div className="flex-grow flex flex-col">
-                  <h4 className="text-lg font-bold text-green-400 mb-4">{t({ JP: '驚異的なカーボンクレジット', EN: 'Amazing Carbon Credits' })}</h4>
-                  <p className="text-gray-300 leading-[1.9] whitespace-pre-line mb-6">
-                    {t({
-                      JP: `MOTHER VEGETABLEのCO₂吸収効率は天然芝と比較するとおよそ700倍となるため、
-世界中に建設できれば地球温暖化問題を急速に解決できる可能性を秘めています。`,
-                      EN: `The CO₂ absorption efficiency of MOTHER VEGETABLE
-is approximately 700 times that of natural grass,
-which holds the potential to rapidly solve global warming issues if deployed worldwide.`
-                    })}
-                  </p>
-                  <div className="flex flex-col md:flex-row justify-center gap-4">
-                    <div className="w-full md:max-w-xs h-48 rounded-xl overflow-hidden shadow-lg">
-                      <img
-                        src="/mv-factory-whole.jpg"
-                        alt="MOTHER VEGETABLE培養システム"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="w-full md:max-w-xs h-48 rounded-xl overflow-hidden shadow-lg">
-                      <img
-                        src="/mv-factory-greenhouse.jpg"
-                        alt="MOTHER VEGETABLEファクトリー建物"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+              
+              {/* 地球最初の生命体とは */}
+              <div className="p-6 bg-green-500/10 border border-green-500/30 rounded-lg flex-grow">
+                <div className="flex justify-center my-6">
+                  <div className="w-60 h-60 rounded-2xl overflow-hidden shadow-lg">
+                    <img
+                      src="/mazavege.png"
+                      alt="マザーベジタブル"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
-                <div className="mt-auto pt-6">
-                  <p className="text-gray-300 leading-[1.9] whitespace-pre-line">
-                    {t({
-                      JP: `本プロジェクトは実証フェーズを完了し、
-マレーシアにて秘密裏にパイロットプラントが24時間365日稼働中です。
 
-マザーベジタブル培養技術による均一化生産システムを確立し、
-CO₂の安定的吸収を実証済み。
+                <p className="text-gray-300 leading-[1.9] whitespace-pre-line mb-4 text-sm md:text-base">
+                  {t({
+                    JP: `地球最初の生命が人類にまで至っている進化を研究した結果
+以下のものを創生することが可能となる。`,
+                    EN: `Through researching the evolution from Earth's first life to humanity,
+the following can be created:`
+                  })}
+                </p>
 
-さらにASEAN諸国の政府機関や大学・研究機関との
-戦略的パートナーシップにより、国際的な協力体制を構築。
-
-「既に稼働している実証施設」と「国際的な官学連携」が
-本プロジェクトの強力な競争優位性となっています。`,
-                      EN: `This project has completed the verification phase,
-with a pilot plant secretly operating 24/7 in Malaysia.
-
-We have established a standardized production system
-using Mother Vegetable cultivation technology
-and demonstrated stable CO₂ absorption.
-
-Furthermore, through strategic partnerships
-with government agencies and universities/research institutions
-in ASEAN countries, we have built an international cooperation framework.
-
-Our "already operational demonstration facility"
-and "international government-academic collaboration"
-constitute the strong competitive advantage of this project.`
-                    })}
+                <div className="space-y-2">
+                  <p className="text-gray-300 text-sm md:text-base">
+                    <span className="text-green-400 font-semibold inline-block w-40">{t({ JP: '①食品', EN: '①Food' })}</span>
+                    <span className="text-white">{t({ JP: '1つの生命体から人類に必要な48種類の栄養素を含む食品', EN: 'Foods containing 48 essential nutrients from a single life form' })}</span>
+                  </p>
+                  <p className="text-gray-300 text-sm md:text-base">
+                    <span className="text-green-400 font-semibold inline-block w-40">{t({ JP: '②スキンケア', EN: '②Skincare' })}</span>
+                    <span className="text-white">{t({ JP: '皮膚の再生に効果のあるスキンケア', EN: 'Skincare effective for skin regeneration' })}</span>
+                  </p>
+                  <p className="text-gray-300 text-sm md:text-base">
+                    <span className="text-green-400 font-semibold inline-block w-40">{t({ JP: '③魚貝類の養殖', EN: '③Aquaculture' })}</span>
+                    <span className="text-white">{t({ JP: '化学物質を一切使用しない高タンパク質の魚貝類の養殖', EN: 'Aquaculture of fish and shellfish without any chemicals' })}</span>
                   </p>
                 </div>
-              </div>
+              </div> 
+             
 
              
             </div>
 
             {/* Right Section - 02 */}
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col">
               <div className="flex items-center justify-center mb-8">
                 <div className="relative">
                   <div className="absolute inset-0 opacity-50"></div>
                   <div className="relative px-6 py-3">
-                    <span className="text-5xl font-black bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">02</span>
+                    <span className="text-5xl font-black bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">Ⅱ</span>
                   </div>
                 </div>
               </div>
 
-              {/* 地球最初の生命体とは */}
-              <div className="p-6 bg-green-500/10 border border-green-500/30 rounded-lg flex-grow flex flex-col h-full">
-                <div className="flex-grow flex flex-col">
-                  <h4 className="text-lg font-bold text-green-400 mb-4">{t({ JP: '地球最初の生命体とは', EN: "Earth's First Life Form" })}</h4>
-                  <p className="text-gray-300 leading-[1.9] whitespace-pre-line">
-                    {t({
-                      JP: `35億年前に地球で最初の生物を創った「マザーベジタブル」の
-構造を分析して現在に再現した生命体を示します。`,
-                      EN: `A life form recreated in the present by analyzing
-the structure of "Mother Vegetable" that created
-the first organisms on Earth 3.5 billion years ago.`
-                    })}
-                  </p>
-                  <div className="flex justify-center mt-6 mb-10">
-                    <div className="w-48 h-48 rounded-2xl overflow-hidden shadow-lg">
-                      <img
-                        src="/mazavege.png"
-                        alt="マザーベジタブル"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+               {/* 驚異的なカーボンクレジット */}
+              <div className="p-6 bg-green-500/10 border border-green-500/30 rounded-lg flex-grow">
+                <div className="flex flex-col md:flex-row justify-center gap-4 my-6">
+                  <div className="w-full md:max-w-xs h-48 rounded-xl overflow-hidden shadow-lg">
+                    <img
+                      src="/mv-factory-whole.jpg"
+                      alt="MOTHER VEGETABLE培養システム"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="w-full md:max-w-xs h-48 rounded-xl overflow-hidden shadow-lg">
+                    <img
+                      src="/mv-factory-greenhouse.jpg"
+                      alt="MOTHER VEGETABLEファクトリー建物"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
-                {/* 地球最初の生命体ができること */}
-                <div className="mt-auto">
-                  <h4 className="text-lg font-bold text-green-400 mb-4">{t({ JP: '地球最初の生命体ができること', EN: "What Earth's First Life Form Can Do" })}</h4>
-                  <p className="text-gray-300 leading-[1.9] whitespace-pre-line">
+
+                <div className="space-y-2">
+                  <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '①Carbon Rebirth', EN: '①Carbon Rebirth' })}</p>
+                  <p className="text-white mb-3 text-sm md:text-base">{t({ JP: 'マザーベジタブル生産によるCO2の吸収（天然スギの700倍）およびO2の排出により小さな地球を再現', EN: 'Recreating a small Earth through CO2 absorption (700 times that of natural cedar) and O2 emission via Mother Vegetable production' })}</p>
+
+                  <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '②ZERO Carbon Energy', EN: '②ZERO Carbon Energy' })}</p>
+                  <p className="text-white mb-3 text-sm md:text-base">{t({ JP: '外部電力、化石燃料などCO2を排出するエネルギーを一切使用しなく、小さな地球を再現', EN: 'Recreating a small Earth without using any CO2-emitting energy such as external electricity or fossil fuels' })}</p>
+
+                  <p className="text-green-400 font-semibold text-sm md:text-base">{t({ JP: '③カーボンクレジットの試算表', EN: '③Carbon Credit Estimate' })}</p>
+                  <p className="text-white text-sm md:text-base">{t({ JP: 'SEF 1 unit / 26m x 16m x 10階建 は面積にすると約0.5 ヘクタールとなる', EN: 'SEF 1 unit / 26m x 16m x 10 floors equals approximately 0.5 hectares in area' })}</p>
+                </div>
+
+                
+              </div>
+
+            </div>
+            
+          </div>
+          <div className="mt-6 space-y-3 text-white">
+                  <p className="leading-relaxed text-sm md:text-base">
                     {t({
-                      JP: `最初の生命体が人類まで至っている進化の中で
-様々なものを創ることができます。
-
-例えば、たった1つの生命体から人類に必要な栄養素を
-30種類以上含んだスーパーフードを提供することができたり、
-地球上にすでに存在するものの成分が同じ代替品を創ることもできます。
-
-様々なものが作れるようになった中で
-我々は8つの産業に分類して
-それぞれに対してマザーベジタブルを核に展開しています。`,
-                      EN: `Through the evolution from the first life form to humanity,
-we can create various things.
-
-For example, from just one life form,
-we can provide superfoods containing over 30 types
-of nutrients essential for humans,
-or create alternatives with the same components
-as things that already exist on Earth.
-
-Among the various things we can now create,
-we have classified them into 8 industries
-and are developing each with Mother Vegetable at the core.`
+                      JP: `※ 一般的な0.5ヘクタールの天然スギのCO2吸収量は年間約4ton\nSEFはその700倍のCO2吸収量により年間約2,800tonとなる`,
+                      EN: `※ General 0.5 hectare natural cedar CO2 absorption is about 4 tons per year\nSEF absorbs 700 times more CO2, approximately 2,800 tons per year`
+                    })}
+                  </p>
+                  <p className="leading-relaxed text-sm md:text-base">
+                    {t({
+                      JP: `※ 一般的なカーボンクレジットの価格は1tonあたり約4,000円\nSEFは2,800ton x 4,000円 = 11,200,000円 / 年 の収益性がある`,
+                      EN: `※ General carbon credit price is about 4,000 yen per ton\nSEF has profitability of 2,800 tons x 4,000 yen = 11,200,000 yen / year`
                     })}
                   </p>
                 </div>
-              </div>             
-            </div>
-          </div>
         </div>
 
 
