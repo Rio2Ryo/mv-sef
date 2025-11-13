@@ -145,7 +145,7 @@ the following can be created:`
                   <p className="leading-relaxed text-sm md:text-base whitespace-pre-line">
                     {t({
                       JP: `一般的なカーボンクレジットの価格は1tonあたり約4,000円\nSEFは2,800ton x 4,000円 = 11,200,000円 / 年 の収益性がある。`,
-                      EN: `The typical carbon credit price is approximately 4,000 yen per ton\nSEF has profitability of 2,800 tons x 4,000 yen = 11,200,000 yen / year.`
+                      EN: `The typical carbon credit price is approximately 25.8 USD per ton\nSEF has profitability of 2,800 tons x 25.8 USD = 72,240 USD / year.`
                     })}
                   </p>
 
