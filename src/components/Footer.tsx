@@ -20,13 +20,15 @@ export default function Footer() {
   return (
     <footer className="bg-black">
        <div className="bg-gray-900/50 backdrop-blur-md border border-green-500/20 rounded-xl p-8 mb-16 mx-auto max-w-[1280px]">
-        {/* Leaf Icon */}
+        {/* Logo */}
         <div className="flex justify-center mb-4">
-          <svg className="w-12 h-12 text-[#25C760]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C12 2 7 4 7 12C7 16 9 20 12 22C15 20 17 16 17 12C17 4 12 2 12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M12 2C12 2 17 4 17 12C17 16 15 20 12 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M12 8C12 8 14 9 14 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-          </svg>
+          <Image
+            src="/mazavege_logo_midori.png"
+            alt="Mother Vegetable Logo"
+            width={48}
+            height={48}
+            className="w-12 h-12"
+          />
         </div>
 
         {/* Title */}
