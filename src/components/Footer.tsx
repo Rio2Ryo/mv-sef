@@ -34,7 +34,7 @@ export default function Footer() {
         </div>
 
         {/* Title */}
-        <h2 className="text-xs md:text-sm font-bold text-[#25C760] text-center mb-4">Mother Vegetable Group</h2>
+        <h2 className="text-xs md:text-sm font-bold text-[#25C760] text-center mb-3">Mother Vegetable Group</h2>
 
         {/* Countries Grid */}
         <div className="grid grid-cols-9 grid-rows-2 gap-x-0 gap-y-2 mx-auto text-center max-w-[950px]">
@@ -102,7 +102,7 @@ export default function Footer() {
 
       {/* Legal Links & Copyright */}
       <div className="">
-        <div className="container mx-auto px-4 pt-2 pb-6">
+        <div className="container mx-auto px-4 pt-1 pb-6">
           <div className="text-center space-y-4">
            
             <div className="text-[#25C760] text-sm whitespace-pre-line">
