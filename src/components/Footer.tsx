@@ -82,17 +82,31 @@ export default function Footer() {
 
         {/* Official Page Link */}
         <a
-          href="#home"
+          href="https://www.mothervegetable.org/"
           onClick={(e) => {
             e.preventDefault()
             const homeSection = document.getElementById('home')
-            if (homeSection) {
-              homeSection.scrollIntoView({ behavior: 'smooth' })
-            } else {
-              window.scrollTo({ top: 0, behavior: 'smooth' })
+            const targetPosition = homeSection ? homeSection.offsetTop : 0
+            const startPosition = window.pageYOffset
+            const distance = targetPosition - startPosition
+            const duration = 1000
+            let start: number | null = null
+
+            const animation = (currentTime: number) => {
+              if (start === null) start = currentTime
+              const timeElapsed = currentTime - start
+              const progress = Math.min(timeElapsed / duration, 1)
+              const ease = progress < 0.5
+                ? 4 * progress * progress * progress
+                : 1 - Math.pow(-2 * progress + 2, 3) / 2
+              window.scrollTo(0, startPosition + distance * ease)
+              if (timeElapsed < duration) {
+                requestAnimationFrame(animation)
+              }
             }
+            requestAnimationFrame(animation)
           }}
-          className="block text-[clamp(8px,2vw,10px)] md:text-sm font-medium text-[#25C760] text-center mb-3 hover:underline cursor-pointer"
+          className="block text-[clamp(8px,2vw,10px)] md:text-sm font-medium text-[#25C760] text-center mb-3 cursor-pointer"
         >
           Official Page
         </a>
