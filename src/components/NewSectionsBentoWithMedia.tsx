@@ -304,7 +304,7 @@ const NewSectionsBentoWithMedia = () => {
             {/* Mother Vegetable顕微鏡画像 */}
             <div className="mb-8 rounded-lg overflow-hidden max-w-md mx-auto">
               <Image
-                src="/media/mother-vegetable-microscopic.png"
+                src="/media/sef-exterior.png"
                 alt="Mother Vegetable Microscopic View"
                 width={800}
                 height={400}
@@ -394,16 +394,6 @@ const NewSectionsBentoWithMedia = () => {
           <p className="text-lg text-white/80 mb-4 text-center">{t.section1_6.text1}</p>
           <p className="text-lg text-white/80 mb-12 text-center">{t.section1_6.text2}</p>
 
-          {/* SEF内部構造画像 */}
-          <div className="mb-12 rounded-lg overflow-hidden">
-            <Image
-              src="/media/sef-interior.png"
-              alt="SEF Interior"
-              width={900}
-              height={500}
-              className="w-full h-auto rounded-xl"
-            />
-          </div>
 
           {/* SEF内部構造の動画 */}
           <div className="mb-12 rounded-lg overflow-hidden">
@@ -472,7 +462,7 @@ const NewSectionsBentoWithMedia = () => {
             {/* 投資成長画像 */}
             <div className="mb-8 rounded-lg overflow-hidden max-w-md mx-auto">
               <Image
-                src="/media/mother-vegetable-microscopic.png"
+                src="/media/sef-interior.png"
                 alt="Mother Vegetable"
                 width={500}
                 height={500}
