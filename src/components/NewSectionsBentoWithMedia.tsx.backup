@@ -279,10 +279,10 @@ const NewSectionsBentoWithMedia = () => {
             <div className="mb-8 rounded-lg overflow-hidden">
               <Image
                 src="/media/ancient-earth-red.png"
-                alt="Ancient Earth"
-                width={500}
-                height={500}
-                className="w-full h-auto rounded-xl"
+                alt="Ancient Earth 3.5 billion years ago"
+                width={1200}
+                height={600}
+                className="w-full h-auto"
               />
             </div>
 
@@ -305,10 +305,10 @@ const NewSectionsBentoWithMedia = () => {
             <div className="mb-8 rounded-lg overflow-hidden max-w-md mx-auto">
               <Image
                 src="/media/mother-vegetable-microscopic.png"
-                alt="Mother Vegetable Microscopic View"
-                width={800}
-                height={400}
-                className="w-full h-auto rounded-xl"
+                alt="Mother Vegetable microscopic view"
+                width={600}
+                height={600}
+                className="w-full h-auto"
               />
             </div>
 
@@ -348,10 +348,10 @@ const NewSectionsBentoWithMedia = () => {
             <div className="mb-8 rounded-lg overflow-hidden">
               <Image
                 src="/media/co2-absorption-concept.png"
-                alt="CO2 Absorption Concept"
-                width={800}
-                height={400}
-                className="w-full h-auto rounded-xl"
+                alt="CO2 absorption concept"
+                width={1200}
+                height={600}
+                className="w-full h-auto"
               />
             </div>
 
@@ -372,10 +372,10 @@ const NewSectionsBentoWithMedia = () => {
           <div className="mb-12 rounded-lg overflow-hidden">
             <Image
               src="/media/sef-exterior.png"
-              alt="SEF Exterior"
-              width={900}
-              height={450}
-              className="w-full h-auto rounded-xl"
+              alt="Small Earth Factory exterior"
+              width={1400}
+              height={700}
+              className="w-full h-auto"
             />
           </div>
 
@@ -398,10 +398,10 @@ const NewSectionsBentoWithMedia = () => {
           <div className="mb-12 rounded-lg overflow-hidden">
             <Image
               src="/media/sef-interior.png"
-              alt="SEF Interior"
-              width={900}
-              height={500}
-              className="w-full h-auto rounded-xl"
+              alt="Small Earth Factory interior structure"
+              width={1400}
+              height={800}
+              className="w-full h-auto"
             />
           </div>
 
@@ -409,7 +409,7 @@ const NewSectionsBentoWithMedia = () => {
           <div className="mb-12 rounded-lg overflow-hidden">
             <video
               controls
-              className="w-full h-auto rounded-xl"
+              className="w-full h-auto rounded-lg"
               poster="/media/sef-interior.png"
             >
               <source src="/media/sef-structure.mp4" type="video/mp4" />
@@ -472,11 +472,11 @@ const NewSectionsBentoWithMedia = () => {
             {/* 投資成長画像 */}
             <div className="mb-8 rounded-lg overflow-hidden max-w-md mx-auto">
               <Image
-                src="/media/mother-vegetable-microscopic.png"
-                alt="Mother Vegetable"
-                width={500}
-                height={500}
-                className="w-full h-auto rounded-xl"
+                src="/media/investment-growth.png"
+                alt="Investment growth concept"
+                width={600}
+                height={600}
+                className="w-full h-auto"
               />
             </div>
 
@@ -509,10 +509,10 @@ const NewSectionsBentoWithMedia = () => {
           <div className="mb-12 rounded-lg overflow-hidden">
             <Image
               src="/media/global-sef-network.png"
-              alt="Global SEF Network"
-              width={800}
-              height={400}
-              className="w-full h-auto rounded-xl"
+              alt="Global SEF network"
+              width={1200}
+              height={600}
+              className="w-full h-auto"
             />
           </div>
 
