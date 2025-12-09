@@ -502,7 +502,7 @@ const NewSectionsBentoWithMedia = () => {
 
           {/* 世界へ広がるSEF */}
           <h3 className="text-3xl font-bold mb-8 text-emerald-400 text-center">
-            {language === 'ja' ? '世界へ広がるSEF' : 'SEF Expanding Globally'}
+            {language === 'JP' ? '世界へ広がるSEF' : 'SEF Expanding Globally'}
           </h3>
 
           {/* グローバルネットワーク画像 */}
