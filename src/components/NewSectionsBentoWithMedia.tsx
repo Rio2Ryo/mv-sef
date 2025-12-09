@@ -481,7 +481,7 @@ const NewSectionsBentoWithMedia = () => {
             </div>
 
             <h4 className="text-2xl font-bold text-emerald-400 mb-6">
-              {language === 'ja' ? 'SEFで作られた Mother Vegetable' : 'Mother Vegetable Made in SEF'}
+              {language === 'JP' ? 'SEFで作られた Mother Vegetable' : 'Mother Vegetable Made in SEF'}
             </h4>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
