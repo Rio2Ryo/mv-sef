@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import ProjectOverview from '@/components/ProjectOverview'
-import NewSectionsBento from '@/components/NewSectionsBento'
+import NewSectionsBentoWithMedia from '@/components/NewSectionsBentoWithMedia'
 
 import Partners from '@/components/Partners'
 import TokenInfo from '@/components/TokenInfo'
@@ -31,7 +31,7 @@ export default function Home() {
         <Header />
         <Hero />
         <ProjectOverview />
-        <NewSectionsBento />
+        <NewSectionsBentoWithMedia />
 
         <Partners />
         {/*<TokenInfo />*/}
