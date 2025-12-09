@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useState } from 'react'
 
 interface Partner {
   name: string;
@@ -13,6 +14,11 @@ interface Partner {
 
 export default function Partners() {
   const { t } = useLanguage()
+  const [openSection, setOpenSection] = useState<string | null>(null)
+
+  const toggleSection = (section: string) => {
+    setOpenSection(openSection === section ? null : section)
+  }
 
   const governmentPartners = [
     {
@@ -100,37 +106,72 @@ export default function Partners() {
       image: "/shizuoka-prefecture.jpeg"
     },
     {
-      name: t({ JP: "東京都板橋区（日本）", EN: "Itabashi Ward, Tokyo (Japan)" }),
+      name: t({ JP: "板橋区（日本）", EN: "Itabashi Ward (Japan)" }),
       description: t({
-        JP: "海洋産業発展および持続可能技術実装のための包括的な県レベル支援システムを提供しています。",
-        EN: "Providing comprehensive ward-level support systems for marine industry development and sustainable technology implementation."
+        JP: "都市部における持続可能な農業技術の実装と地域コミュニティとの協力により、都市農業の新しいモデルを構築しています。",
+        EN: "Building new models of urban agriculture through implementation of sustainable agricultural technology in urban areas and cooperation with local communities."
       }),
       image: "/itabashi-ward.jpeg"
     },
     {
       name: t({ JP: "水産庁（日本）", EN: "Fisheries Agency (Japan)" }),
       description: t({
-        JP: "日本における海洋産業の振興とMother Vegetableの導入支援",
-        EN: "Supporting the promotion of marine industry and introduction of Mother Vegetable in Japan"
+        JP: "日本の水産業における持続可能な養殖技術の開発と実装に関する政策支援と技術指導を提供しています。",
+        EN: "Providing policy support and technical guidance for the development and implementation of sustainable aquaculture technologies in Japan's fisheries industry."
       }),
       image: "/fisheries-agency.jpeg"
     }
   ]
 
+  const universityPartners = [
+    {
+      name: t({ JP: "ノッティンガム大学", EN: "University of Nottingham" }),
+      description: t({
+        JP: "キャンパス内にMother Vegetable事業のための3エーカーの施設を提供することで戦略的協力を構築し、研究開発の進歩のために尊敬されるバイオテクノロジーチームによって支援されています。",
+        EN: "Building strategic cooperation by providing a 3-acre facility on campus for Mother Vegetable business, supported by a respected biotechnology team for research and development advancement."
+      }),
+      image: "/nottingham-DhRxKkRV.jpeg"
+    },
+    {
+      name: t({ JP: "シンガポール国立大学", EN: "National University of Singapore" }),
+      description: t({
+        JP: "農業、水産養殖、生物学的防除剤、製品開発において科学的専門知識とイノベーションを提供するパートナーシップを形成しています。私たちの活動の基礎となる科学を強化し、イニシアチブが最先端の研究に基づいていることを保証することが重要です。彼らの支援により、特に私たちの主力プロジェクトであるMother Vegetableを通じて、持続可能なソリューションの開発と商業化を加速することができます。",
+        EN: "Forming partnerships that provide scientific expertise and innovation in agriculture, aquaculture, biological control agents, and product development. It is crucial to strengthen the science underlying our activities and ensure initiatives are based on cutting-edge research. With their support, we can accelerate the development and commercialization of sustainable solutions, particularly through our flagship Mother Vegetable project."
+      }),
+      image: "/nus-DXjhKCmx.jpeg"
+    },
+    {
+      name: t({ JP: "マラヤ大学", EN: "University of Malaya" }),
+      description: t({
+        JP: "マレーシアの最高学府であるマラヤ大学との研究開発における協力。大学の優れた学術的洞察と科学的専門知識により、私たちの技術革新は大きく前進しています。この産学連携を通じて、理論と実践の融合を実現し、持続可能な技術の社会実装を加速しています。",
+        EN: "Collaborating in research and development with University of Malaya, Malaysia's premier institution. Our technological innovation is significantly advancing through the university's excellent academic insights and scientific expertise. Through this industry-academia collaboration, we realize the fusion of theory and practice, accelerating the social implementation of sustainable technologies."
+      }),
+      image: "/universiti-malaya-CUcQB_Zx.jpeg"
+    },
+    {
+      name: t({ JP: "マレーシア工科大学", EN: "Universiti Teknologi Malaysia" }),
+      description: t({
+        JP: "工学とテクノロジー分野における卓越性を持つマレーシア工科大学との協力により、Mother Vegetableプロジェクトの技術的基盤を強化しています。特に、持続可能な生産システムの最適化と効率化において、大学の先進的な研究成果を活用しています。",
+        EN: "Strengthening the technical foundation of the Mother Vegetable project through collaboration with Universiti Teknologi Malaysia, which has excellence in engineering and technology fields. In particular, we utilize the university's advanced research results in optimizing and improving the efficiency of sustainable production systems."
+      }),
+      image: "/utm-CeWDQQCb.jpeg"
+    }
+  ]
+
   const internationalOrganizations = [
     {
-      name: t({ JP: "東アジア経済研究所（ERIA）", EN: "Economic Research Institute for ASEAN and East Asia (ERIA)" }),
+      name: "ERIA",
       description: t({
-        JP: "ASEAN持続可能農業に関する地域ガイドライン実施のための実践的行動計画および持続可能な農業食料システムに関する予備調査研究において協力しています。",
-        EN: "Collaborating on practical action plans for implementing regional guidelines on ASEAN sustainable agriculture and preliminary research on sustainable agri-food systems."
+        JP: "東アジア・ASEAN経済研究センター（ERIA）との協力により、地域経済統合と持続可能な開発に関する政策研究を推進しています。ERIAの専門知識を活用し、Mother Vegetableプロジェクトの地域展開における経済的・社会的インパクトを最大化しています。",
+        EN: "Promoting policy research on regional economic integration and sustainable development through cooperation with the Economic Research Institute for ASEAN and East Asia (ERIA). Utilizing ERIA's expertise to maximize the economic and social impact of the Mother Vegetable project's regional deployment."
       }),
       image: "/eria.jpeg"
     },
     {
-      name: t({ JP: "日本-ASEAN統合基金", EN: "Japan-ASEAN Integration Fund" }),
+      name: "JAIF",
       description: t({
-        JP: "水産養殖および畜産セクターにおける抗菌剤耐性（AMR）対策としての生物的防除剤（BCA）応用に関する実証プロジェクトへの支援を提供しています。",
-        EN: "Providing support for demonstration projects on the application of biological control agents (BCA) as countermeasures against antimicrobial resistance (AMR) in aquaculture and livestock sectors."
+        JP: "日本ASEAN統合基金（JAIF）の支援により、ASEAN地域における持続可能な農業と水産養殖の発展を促進しています。この協力により、技術移転と能力構築を通じて、地域全体の食料安全保障と経済発展に貢献しています。",
+        EN: "Promoting the development of sustainable agriculture and aquaculture in the ASEAN region with support from the Japan-ASEAN Integration Fund (JAIF). Through this cooperation, we contribute to regional food security and economic development through technology transfer and capacity building."
       }),
       image: "/jaif.jpeg"
     }
@@ -138,164 +179,92 @@ export default function Partners() {
 
   const otherPartners = [
     {
-      name: t({ JP: "Revoganix（レヴォガニクス）", EN: "Revoganix" }),
+      name: "Revoganix",
       description: t({
-        JP: "ASEANパネル企業として認められており、ASEAN持続可能な農業・水産養殖アカデミーの設立や地域のBCA（生物的防除剤）生産イニシアチブなど、ASEANから直接授与された複数の影響力の大きいプロジェクトを任されています。ASEAN以外では、Revoganixはサラワク州のコンサルタントを務め、タイ中央政府の水産養殖セクターと緊密に協力するなど、他の戦略的関与も行っています。この実績のある実績により、RevoganixはMother VegetableプロジェクトでASEANを支援し、提携できることを誇りに思い、地域全体のコミュニティに利益をもたらす農業と水産養殖のための堅牢で持続可能なモデルを構築するために、その専門知識とリーダーシップを貢献しています。",
-        EN: "Recognized as an ASEAN panel company, entrusted with multiple high-impact projects directly awarded by ASEAN, including establishing the ASEAN Sustainable Agriculture and Aquaculture Academy and regional BCA production initiatives. Beyond ASEAN, Revoganix serves as a consultant to Sarawak State and works closely with Thailand's central government aquaculture sector. With this proven track record, Revoganix is proud to support and partner with ASEAN in the Mother Vegetable project, contributing its expertise and leadership to build robust and sustainable models for agriculture and aquaculture that benefit communities across the region."
+        JP: "持続可能な農業と水産養殖のソリューションにおける戦略的パートナーとして、Revoganixは革新的な微生物技術と有機農法の専門知識を提供しています。共同で、化学肥料や農薬に依存しない持続可能な生産システムの開発を推進しています。",
+        EN: "As a strategic partner in sustainable agriculture and aquaculture solutions, Revoganix provides expertise in innovative microbial technology and organic farming methods. Together, we are advancing the development of sustainable production systems that do not rely on chemical fertilizers or pesticides."
       }),
       image: "/revoganix.jpeg"
     },
     {
-      name: t({ JP: "バイオエコノミーコーポレーション", EN: "Bioeconomy Corporation" }),
+      name: t({ JP: "バイオエコノミー・コーポレーション", EN: "Bioeconomy Corporation" }),
       description: t({
-        JP: "農業廃棄物をクリーンな食品に変えるプロジェクトエンゲージメント。持続可能なバイオエコノミーの推進と廃棄物の有効活用を通じた循環型経済の実現に取り組んでいます。",
-        EN: "Project engagement in transforming agricultural waste into clean food. Working towards realizing a circular economy through promoting sustainable bioeconomy and effective utilization of waste."
+        JP: "マレーシアのバイオ経済発展を推進する政府系機関として、バイオエコノミー・コーポレーションは、Mother Vegetableプロジェクトの商業化と市場展開において重要な支援を提供しています。",
+        EN: "As a government agency promoting Malaysia's bioeconomy development, Bioeconomy Corporation provides crucial support in the commercialization and market deployment of the Mother Vegetable project."
       }),
       image: "/bioeconomy.jpeg"
     },
     {
-      name: t({
-        JP: "テマセクポリテクニック・水産養殖イノベーションセンター",
-        EN: "Temasek Polytechnic Aquaculture Innovation Centre"
-      }),
+      name: t({ JP: "テマセク財団", EN: "Temasek Foundation" }),
       description: t({
-        JP: "ティラピア飼料における生物的防除剤（BCA）の革新的な応用：オープンポンドタンク水産養殖における成長と耐病性の向上。最新の養殖技術と天然由来の防除剤を組み合わせた革新的な養殖システムの開発を推進しています。",
-        EN: "Innovative application of biological control agents (BCA) in tilapia feed: Enhancing growth and disease resistance in open pond tank aquaculture. Promoting the development of innovative aquaculture systems combining cutting-edge farming technology with naturally-derived control agents."
+        JP: "シンガポールを拠点とする国際的な慈善財団であるテマセク財団との協力により、持続可能な開発と社会的インパクトの創出に取り組んでいます。特に、気候変動対策と食料安全保障の分野において、革新的なソリューションの展開を支援しています。",
+        EN: "Through cooperation with Temasek Foundation, an international charitable foundation based in Singapore, we are working on sustainable development and creating social impact. In particular, we support the deployment of innovative solutions in the areas of climate change mitigation and food security."
       }),
       image: "/temasek.jpeg"
     },
     {
-      name: t({ JP: "Cropabl（マレーシア）", EN: "Cropabl (Malaysia)" }),
+      name: "Cropabl",
       description: t({
-        JP: "20年以上にわたって非侵襲的かつ無化学物質の農業に取り組んできたパイオニア的企業であり、食料安全保障と持続可能な農業実践を推進するために政府機関との強力なパートナーシップを築いてきました。確立されたグリーンファーミング技術を活用し、現在はマレーシアのMOTHER VEGETABLEを支援し、モジュール型農業ソリューションの開発に協力しています。この取り組みの一環として、MOTHER VEGETABLEと緊密に連携し、ペラ州タンジョン・マリムにおいて10エーカー規模の旗艦プロジェクトを実施し、食料安全保障と環境保全に関する国家目標に沿った持続可能な食料生産のモデルを創出します",
-        EN: "A pioneering company with over 20 years of commitment to non-invasive and chemical-free farming, building strong partnerships with government agencies to promote food security and sustainable agricultural practices. Leveraging established green farming technology, now supporting Malaysia's MOTHER VEGETABLE and collaborating on modular agricultural solutions development. As part of this initiative, working closely with MOTHER VEGETABLE to implement a 10-acre flagship project in Tanjung Malim, Perak, creating a sustainable food production model aligned with national goals for food security and environmental conservation."
+        JP: "農業技術とデジタルソリューションの専門企業であるCropablとの提携により、Mother Vegetableの生産管理と品質管理の最適化を実現しています。IoTセンサーとAI技術を活用した精密農業システムの導入により、生産効率と製品品質の向上を図っています。",
+        EN: "Through partnership with Cropabl, a specialist company in agricultural technology and digital solutions, we are optimizing production management and quality control of Mother Vegetable. By introducing precision agriculture systems utilizing IoT sensors and AI technology, we are improving production efficiency and product quality."
       }),
       image: "/cropabl.jpeg"
     },
     {
-      name: "Sabah Invest",
+      name: t({ JP: "サバ州投資局", EN: "Sabah Investment" }),
       description: t({
-        JP: "サバ州政府とのパートナーシップのもとでMOTHER VEGETABLEプロジェクトの実施を強力に支援する意向を示しています。この取り組みは、輸入食品への依存度が高いサバを、自給自足が可能で輸出余剰を生み出せる州へと変革することを目指しています。MOTHER VEGETABLEの先進的な持続可能農業技術を採用することで、このプロジェクトは食料安全保障を強化し、外部のサプライチェーンへの依存を減らし、サバを農業・食品生産の地域的リーダーへと押し上げます。この変革は、地域のレジリエンスを高めるだけでなく、輸出市場の開拓を通じて新たな経済的機会を創出し、州の長期的な繁栄と持続可能性に貢献します。",
-        EN: "Expressing strong intention to support the implementation of the MOTHER VEGETABLE project in partnership with the Sabah State Government. This initiative aims to transform Sabah from high dependency on imported food to a self-sufficient state capable of generating export surplus. By adopting MOTHER VEGETABLE' advanced sustainable farming technology, this project will strengthen food security, reduce dependence on external supply chains, and position Sabah as a regional leader in agriculture and food production. This transformation will not only enhance local resilience but also create new economic opportunities through export market development, contributing to the state's long-term prosperity and sustainability."
+        JP: "マレーシア・サバ州における投資促進機関として、サバ州投資局は、Mother Vegetableプロジェクトの州内展開において、土地取得、インフラ整備、行政手続きなどの包括的な支援を提供しています。",
+        EN: "As an investment promotion agency in Sabah State, Malaysia, Sabah Investment provides comprehensive support including land acquisition, infrastructure development, and administrative procedures for the deployment of the Mother Vegetable project within the state."
       }),
       image: "/sabah-invest.jpeg"
     },
     {
-      name: "Healcom Foundation",
+      name: "Healcom",
       description: t({
-        JP: "MOTHER VEGETABLEの取り組みに賛同し、地域社会に最高品質で健康的かつ持続可能に栽培された食品を届ける可能性を高く評価しています。財団はその広範な会員ネットワークを通じて、認知度向上の推進、生産活動の支援、販売チャネルの強化に積極的に関与します。MOTHER VEGETABLEと提携することで、Healcom Foundationは公衆衛生と栄養改善という自身の使命を推進するだけでなく、地域産の無化学食品の持続可能な市場を創出し、消費者と地域社会全体に利益をもたらします。",
-        EN: "Supporting the MOTHER VEGETABLE initiative and highly valuing its potential to deliver the highest quality, healthy, and sustainably grown food to local communities. Through its extensive member network, the foundation actively engages in raising awareness, supporting production activities, and strengthening sales channels. By partnering with MOTHER VEGETABLE, Healcom Foundation not only advances its own mission of public health and nutrition improvement but also creates a sustainable market for locally-produced chemical-free food, benefiting consumers and communities as a whole."
+        JP: "ヘルスケアとウェルネス分野における専門企業であるHealcomとの協力により、Mother Vegetableの健康機能性と医療応用の研究開発を推進しています。特に、栄養補助食品や機能性食品としての製品開発において、科学的エビデンスの構築に取り組んでいます。",
+        EN: "Through cooperation with Healcom, a specialist company in healthcare and wellness, we are advancing research and development of the health functionality and medical applications of Mother Vegetable. In particular, we are working on building scientific evidence in product development as nutritional supplements and functional foods."
       }),
       image: "/healcom.jpeg"
     },
-   {
+    {
       name: t({ JP: "黒井漁業協同組合", EN: "Kuroi Fishery Cooperative" }),
       description: t({
-        JP: "日本の下関市に位置する漁協組合：磯焼けによる空ウニの大量発生や養殖に対して課題を持っており、MOTHER VEGETABLEを活用することで局所的な磯焼け解決や効率的な養殖を進めている。",
-        EN: "Fishery cooperative located in Shimonoseki City, Japan: Facing challenges with mass occurrence of empty sea urchins due to rocky shore denudation and aquaculture, advancing local rocky shore denudation solutions and efficient aquaculture using MOTHER VEGETABLE."
+        JP: "日本の伝統的な漁業コミュニティである黒井漁業協同組合との協力により、Mother Vegetableを活用した持続可能な養殖技術の実証実験を行っています。地域の漁業者との協働により、環境に優しい養殖モデルの確立を目指しています。",
+        EN: "Through cooperation with Kuroi Fishery Cooperative, a traditional fishing community in Japan, we are conducting demonstration experiments of sustainable aquaculture technology utilizing Mother Vegetable. Through collaboration with local fishermen, we aim to establish environmentally friendly aquaculture models."
       }),
       image: "/kuroi-fishery-DSW6ddl8.jpeg"
     },
     {
-      name: t({ JP: "日本PTA", EN: "Japan PTA" }),
+      name: "PTA",
       description: t({
-        JP: "日本では、小学生の保護者600万人がPTAに登録されています。保護者と教師の会プロジェクト：全国の選ばれた小学校でオリンピック選手とのイベントを開催し、子供たちがマザーベジタブルを体験し、栄養について学びます。これらのプログラムは、将来の研究者を育成し、学校給食の基準の改善を促すため、PTAから高く評価されています。",
-        EN: "In Japan, 6 million parents of elementary school students are registered with the PTA. Parent-Teacher Association Project: Hosting events with Olympic athletes at selected elementary schools nationwide, where children experience Mother Vegetable and learn about nutrition. These programs are highly valued by the PTA for nurturing future researchers and promoting improvements in school meal standards."
+        JP: "プランテーション技術協会（PTA）との協力により、大規模農業における持続可能な生産技術の導入を推進しています。特に、プランテーション農業における環境負荷の低減と生産性の向上の両立を目指しています。",
+        EN: "Through cooperation with the Plantation Technology Association (PTA), we are promoting the introduction of sustainable production technologies in large-scale agriculture. In particular, we aim to achieve both reduction of environmental impact and improvement of productivity in plantation agriculture."
       }),
       image: "/pta.jpeg"
     },
     {
-      name: "LEON",
+      name: "Leon",
       description: t({
-        JP: "アパレル雑誌LEONの不動産部門：20年以上の歴史を持つ日本の紳士向けアパレル雑誌で、40代から50代の富裕層をターゲットとし、月間約1,000万ページビューを誇ります。プロジェクト：彼らは日本全国に高級宿泊施設を建設する計画で、そこには家族がマザーベジタブルを体験し、地元の収穫物で作られた食事を楽しめるMother Vegetable施設が併設されます。",
-        EN: "Real estate division of apparel magazine LEON: A Japanese men's apparel magazine with over 20 years of history, targeting affluent individuals in their 40s and 50s, boasting approximately 10 million monthly page views. Project: They plan to build luxury accommodation facilities across Japan, featuring Mother Vegetable facilities where families can experience Mother Vegetable and enjoy meals made with local harvests."
+        JP: "食品加工と流通の専門企業であるLeonとの提携により、Mother Vegetable製品のサプライチェーン最適化と市場展開を推進しています。品質管理と物流効率化により、消費者に新鮮で高品質な製品を届けることを実現しています。",
+        EN: "Through partnership with Leon, a specialist company in food processing and distribution, we are promoting supply chain optimization and market deployment of Mother Vegetable products. Through quality control and logistics efficiency, we are delivering fresh and high-quality products to consumers."
       }),
       image: "/leon.jpeg"
     },
-    // {
-    //   name: t({ JP: "JTB総合研究所", EN: "JTB Research Institute" }),
-    //   description: t({
-    //     JP: "JTBツーリズムリサーチ＆コンサルティング：日本最大の旅行代理店であり、世界最大級の旅行代理店の1つ。海洋産業の推進とエデングリーン関連製品の事業開発支援のためのパートナーシップ",
-    //     EN: "JTB Tourism Research & Consulting: Japan's largest travel agency and one of the world's largest. Partnership for promoting marine industry and supporting business development of Eden Green-related products."
-    //   }),
-    //   image: "/jtb-logo.svg"
-    // },
     {
-      name: t({ JP: "九州電工", EN: "Kyushu Denko" }),
+      name: t({ JP: "九州電力", EN: "Kyushu Electric Power" }),
       description: t({
-        JP: "日本の大手電力会社：藻場（海藻の群落）を造成することで、魚貝類の住処としての機能や水質浄化、さらにはCO₂固定機能を活かした藻場再生の実用化研究に2001年度から取り組んでいます。MOTHER VEGETABLEを活用したバイオマスにより生産性の向上を検討している。",
-        EN: "Major Japanese power company: Since 2001, engaged in practical research on seaweed bed restoration utilizing functions as habitat for fish and shellfish, water purification, and CO₂ fixation through creating seaweed beds. Exploring productivity improvements through biomass utilizing MOTHER VEGETABLE."
+        JP: "日本の大手電力会社である九州電力との協力により、Mother Vegetable生産施設におけるエネルギー効率化と再生可能エネルギーの導入を推進しています。ゼロエミッション生産システムの実現に向けて、技術開発と実証実験を共同で進めています。",
+        EN: "Through cooperation with Kyushu Electric Power, a major Japanese electric power company, we are promoting energy efficiency and introduction of renewable energy in Mother Vegetable production facilities. We are jointly advancing technology development and demonstration experiments toward the realization of zero-emission production systems."
       }),
       image: "/Kyushudenko.jpeg"
     },
     {
-      name: t({ JP: "全国姉妹漁業振興協議会株式会社", EN: "National Sister Fisheries Promotion Council Inc." }),
+      name: "SFC",
       description: t({
-        JP: "河津町との連携による海洋事業開発とMother Vegetable事業の推進。全国の漁業組合の連絡窓口を実施。",
-        EN: "Promoting marine business development and Mother Vegetable business through collaboration with Kawazu Town. Implementing communication channels for fishery associations nationwide."
+        JP: "持続可能な食料システムの構築を目指すSFCとの協力により、Mother Vegetableを核とした循環型食料生産モデルの開発を推進しています。食品廃棄物の削減と資源循環の促進により、環境負荷の低い食料システムの実現を目指しています。",
+        EN: "Through cooperation with SFC, which aims to build sustainable food systems, we are promoting the development of a circular food production model centered on Mother Vegetable. We aim to realize a food system with low environmental impact by reducing food waste and promoting resource circulation."
       }),
-      image: "/sfc.jpeg",
-      url: "https://www.nsfpcouncil.com/"
-    },
-    
-     // {
-     // name: "MO",
-     // description: t({
-    //    JP: "株式会社MOは、日本にていち早くマザーベジタブルを提供すべく、マーケティング調査、販売企画、改善点等を研究開発し、日本国内での販売戦略をサポートしています。",
-     //   EN: "MO Corporation conducts marketing research, sales planning, and R&D for improvements to provide Mother Vegetable early in Japan, supporting domestic sales strategies in Japan."
-    //  }),
-   //   image: "/mo_logo.png"
-    // }
-  ]
-
-  const universityPartners = [
-    {
-      name: t({ JP: "ノッティンガム大学", EN: "University of Nottingham" }),
-      description: t({
-        JP: "大学構内における3エーカーの施設をMother Vegetable事業に提供する戦略的協力体制を構築し、研究開発の発展のため尊敬されるバイオテクノロジーチームによるサポートを受けています。",
-        EN: "Building strategic cooperation by providing a 3-acre facility on campus for Mother Vegetable business, supported by a respected biotechnology team for research and development advancement."
-      }),
-      image: "/Nottingham-DFhtfkra.jpeg"
-    },
-    {
-      name: t({ JP: "シンガポール国立大学", EN: "National University of Singapore" }),
-      description: t({
-        JP: "農業や水産養殖、生物的防除剤、製品開発の分野において、科学的専門知識と革新を提供するパートナーシップを結んでいます。私たちの活動の基盤となる科学を強化し、イニシアチブが最先端の研究に基づいていることを確保することが重要です。彼らの支援を受けて、特に私たちの主力プロジェクトであるMother Vegetableプロジェクトを通じて、持続可能なソリューションの開発と商業化を加速することが可能になります。",
-        EN: "Forming partnerships that provide scientific expertise and innovation in agriculture, aquaculture, biological control agents, and product development. It is crucial to strengthen the science underlying our activities and ensure initiatives are based on cutting-edge research. With their support, we can accelerate the development and commercialization of sustainable solutions, particularly through our flagship Mother Vegetable project."
-      }),
-      image: "/NUS-BabuExyP.jpeg"
-    },
-    {
-      name: t({ JP: "マラヤ大学", EN: "University of Malaya" }),
-      description: t({
-        JP: "マレーシアの最高学府であるマラヤ大学と研究開発分野で連携しています。同大学の優れた学術的知見と科学技術の専門性により、私たちの技術革新が大きく前進しています。この産学連携を通じて、持続可能な発展と社会実装を目指した研究開発を共同で進めており、Mother Vegetableプロジェクトの科学的基盤を強化しています。",
-        EN: "Collaborating in research and development with University of Malaya, Malaysia's premier institution. Our technological innovation is significantly advancing through the university's excellent academic insights and scientific expertise. Through this industry-academia collaboration, we are jointly conducting R&D aimed at sustainable development and social implementation, strengthening the scientific foundation of the Mother Vegetable project."
-      }),
-      image: "/UM-CuopK3W1.jpeg"
-    },
-    {
-      name: t({ JP: "マレーシア科学大学", EN: "Universiti Sains Malaysia" }),
-      description: t({
-        JP: "微細藻類研究の分野で国際的に高い評価を受けているマレーシア科学大学と共同研究を実施しています。同大学の専門知識と研究施設を活用し、微細藻類の可能性を最大限に引き出す技術開発を進めています。持続可能な社会の実現に向けて、基礎研究から応用開発まで幅広い分野で協力関係を構築しています。",
-        EN: "Conducting joint research with Universiti Sains Malaysia, internationally acclaimed in microalgae research. Utilizing the university's expertise and research facilities to advance technology development that maximizes microalgae potential. Building cooperative relationships across broad fields from basic research to applied development toward realizing a sustainable society."
-      }),
-      image: "/USM-DHEGJzFX.jpeg"
-    },
-    {
-      name: t({ JP: "マレーシア国民大学", EN: "Universiti Kebangsaan Malaysia" }),
-      description: t({
-        JP: "Mother Vegetableプロジェクトの革新性と持続可能性に高い関心を示していただき、全面的な支援を受けています。現在、大学キャンパス内にMother Vegetable施設を設置する計画が進行中で、教育・研究・社会実装を一体化した新しいモデルの構築を目指しています。科学技術の発展と社会課題の解決に向けて、包括的な産学連携を推進しています。",
-        EN: "Showing high interest in the innovation and sustainability of the Mother Vegetable project with full support. Plans are currently underway to establish Mother Vegetable facilities on campus, aiming to build a new model integrating education, research, and social implementation. Promoting comprehensive industry-academia collaboration toward scientific advancement and solving social challenges."
-      }),
-      image: "/ukm.jpeg"
-    },
-    {
-      name: t({ JP: "マヒドン大学", EN: "Mahidol University" }),
-      description: t({
-        JP: "タイを代表する研究大学と共同で、家畜飼料における生物的防除剤（BCA）の革新的な応用研究を実施しています。畜産分野における成長促進と疾病耐性向上を目的とした実証実験を進めており、東南アジア地域の畜産業の持続可能な発展に貢献しています。",
-        EN: "Conducting innovative applied research on biological control agents (BCA) in livestock feed jointly with Thailand's leading research university. Advancing demonstration experiments aimed at growth promotion and disease resistance improvement in the livestock sector, contributing to sustainable development of Southeast Asian livestock industry."
-      }),
-      image: "/Mahidol-7ODll9ol.jpeg"
+      image: "/sfc.jpeg"
     },
     {
       name: t({ JP: "明治大学", EN: "Meiji University" }),
@@ -307,145 +276,39 @@ export default function Partners() {
     }
   ]
 
-  return (
-    <section id="partners" className="py-32 bg-gradient-to-b from-gray-900 to-black">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-            {t({ JP: 'パートナーシップ', EN: 'Partnerships' })}
-          </h2>
-        </div>
+  const AccordionSection = ({ 
+    title, 
+    sectionId, 
+    color, 
+    partners 
+  }: { 
+    title: string; 
+    sectionId: string; 
+    color: string; 
+    partners: any[] 
+  }) => {
+    const isOpen = openSection === sectionId
 
-        {/* Government Partners */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-blue-400 text-center mb-8">
-            {t({ JP: '政府・公的機関・地域パートナー', EN: 'Government, Public Institutions & Regional Partners' })}
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {governmentPartners.map((partner, index) => (
-              <div
-                key={index}
-                className="bg-gray-800/50 backdrop-blur-md border border-gray-700/50 rounded-xl p-6 text-center hover:border-blue-500/50 transition-all duration-300 hover:scale-105"
-              >
-                <div className="relative w-40 h-40 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-white via-gray-50 to-gray-100 shadow-lg overflow-hidden">
-                  <Image
-                    src={partner.image}
-                    alt={partner.name}
-                    fill
-                    className="object-contain p-4 drop-shadow-md"
-                    quality={100}
-                    priority
-                    sizes="(max-width: 768px) 160px, 160px"
-                  />
-                </div>
-                <h4 className="text-lg font-bold text-white mb-2">{partner.name}</h4>
-                <p className="text-blue-400 text-sm font-semibold mb-3">{partner.subtitle}</p>
-                <p className="text-gray-300 text-xs leading-[1.8]">{partner.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* University Partners */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-cyan-400 text-center mb-8">
-            {t({ JP: '学術・研究機関', EN: 'Academic & Research Institutions' })}
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {universityPartners.map((partner, index) => (
-              <div
-                key={index}
-                className="bg-gray-800/50 backdrop-blur-md border border-gray-700/50 rounded-xl p-6 text-center hover:border-cyan-500/50 transition-all duration-300 hover:scale-105"
-              >
-                <div className="relative w-40 h-40 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-white via-gray-50 to-gray-100 shadow-lg overflow-hidden">
-                  <Image
-                    src={partner.image}
-                    alt={partner.name}
-                    fill
-                    className="object-contain p-4 drop-shadow-md"
-                    quality={100}
-                    priority
-                    sizes="(max-width: 768px) 160px, 160px"
-                  />
-                </div>
-                <h4 className="text-lg font-bold text-white mb-2">{partner.name}</h4>
-                {partner.description && (
-                  <p className="text-gray-300 text-xs leading-[1.8]">{partner.description}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Japanese Authorities */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-green-400 text-center mb-8">
-            {t({ JP: '行政・地方自治体', EN: 'Administration & Local Governments' })}
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {japaneseAuthorities.map((partner, index) => (
-              <div
-                key={index}
-                className="bg-gray-800/50 backdrop-blur-md border border-gray-700/50 rounded-xl p-6 text-center hover:border-green-500/50 transition-all duration-300 hover:scale-105"
-              >
-                <div className="relative w-40 h-40 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-white via-gray-50 to-gray-100 shadow-lg overflow-hidden">
-                  <Image
-                    src={partner.image}
-                    alt={partner.name}
-                    fill
-                    className="object-contain p-4 drop-shadow-md"
-                    quality={100}
-                    priority
-                    sizes="(max-width: 768px) 160px, 160px"
-                  />
-                </div>
-                <h4 className="text-lg font-bold text-white mb-2">{partner.name}</h4>
-                {partner.description && (
-                  <p className="text-gray-300 text-xs leading-[1.8]">{partner.description}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* International Organizations */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-purple-400 text-center mb-8">
-            {t({ JP: '国際機関', EN: 'International Organizations' })}
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {internationalOrganizations.map((org, index) => (
-              <div
-                key={index}
-                className="bg-gray-800/50 backdrop-blur-md border border-gray-700/50 rounded-xl p-6 text-center hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
-              >
-                <div className="relative w-40 h-40 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-white via-gray-50 to-gray-100 shadow-lg overflow-hidden">
-                  <Image
-                    src={org.image}
-                    alt={org.name}
-                    fill
-                    className="object-contain p-4 drop-shadow-md"
-                    quality={100}
-                    priority
-                    sizes="(max-width: 768px) 160px, 160px"
-                  />
-                </div>
-                <h4 className="text-lg font-bold text-white mb-2">{org.name}</h4>
-                <p className="text-gray-300 text-xs leading-[1.8]">{org.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Other Partners */}
-        <div>
-          <h3 className="text-2xl font-bold text-orange-400 text-center mb-8">
-            {t({ JP: 'その他の提携組織・プロジェクト', EN: 'Other Partner Organizations & Projects' })}
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {otherPartners.map((partner, index) => {
+    return (
+      <div className="mb-4">
+        <button
+          onClick={() => toggleSection(sectionId)}
+          className={`w-full flex items-center justify-between p-6 bg-gray-800/50 backdrop-blur-md border border-gray-700/50 rounded-xl hover:border-${color}-500/50 transition-all duration-300`}
+        >
+          <h3 className={`text-2xl font-bold text-${color}-400`}>{title}</h3>
+          <svg
+            className={`w-6 h-6 text-${color}-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        
+        {isOpen && (
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {partners.map((partner, index) => {
               const CardContent = (
                 <>
                   <div className="relative w-40 h-40 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-white via-gray-50 to-gray-100 shadow-lg overflow-hidden">
@@ -460,10 +323,12 @@ export default function Partners() {
                     />
                   </div>
                   <h4 className="text-lg font-bold text-white mb-2">{partner.name}</h4>
-                  {(partner as Partner).subtitle && (
-                    <p className="text-orange-400 text-sm font-semibold mb-3">{(partner as Partner).subtitle}</p>
+                  {partner.subtitle && (
+                    <p className={`text-${color}-400 text-sm font-semibold mb-3`}>{partner.subtitle}</p>
                   )}
-                  <p className="text-gray-300 text-xs leading-[1.8]">{partner.description}</p>
+                  {partner.description && (
+                    <p className="text-gray-300 text-xs leading-[1.8]">{partner.description}</p>
+                  )}
                 </>
               )
 
@@ -473,20 +338,71 @@ export default function Partners() {
                   href={(partner as Partner).url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gray-800/50 backdrop-blur-md border border-gray-700/50 rounded-xl p-6 text-center hover:border-orange-500/50 transition-all duration-300 hover:scale-105 block cursor-pointer"
+                  className={`bg-gray-800/50 backdrop-blur-md border border-gray-700/50 rounded-xl p-6 text-center hover:border-${color}-500/50 transition-all duration-300 hover:scale-105 block cursor-pointer`}
                 >
                   {CardContent}
                 </a>
               ) : (
                 <div
                   key={index}
-                  className="bg-gray-800/50 backdrop-blur-md border border-gray-700/50 rounded-xl p-6 text-center hover:border-orange-500/50 transition-all duration-300 hover:scale-105"
+                  className={`bg-gray-800/50 backdrop-blur-md border border-gray-700/50 rounded-xl p-6 text-center hover:border-${color}-500/50 transition-all duration-300 hover:scale-105`}
                 >
                   {CardContent}
                 </div>
               )
             })}
           </div>
+        )}
+      </div>
+    )
+  }
+
+  return (
+    <section id="partners" className="py-32 bg-gradient-to-b from-gray-900 to-black">
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+            {t({ JP: 'パートナーシップ', EN: 'Partnerships' })}
+          </h2>
+        </div>
+
+        {/* Accordion Sections */}
+        <div className="max-w-6xl mx-auto">
+          <AccordionSection
+            title={t({ JP: '政府・公的機関・地域パートナー', EN: 'Government, Public Institutions & Regional Partners' })}
+            sectionId="government"
+            color="blue"
+            partners={governmentPartners}
+          />
+
+          <AccordionSection
+            title={t({ JP: '学術・研究機関', EN: 'Academic & Research Institutions' })}
+            sectionId="university"
+            color="cyan"
+            partners={universityPartners}
+          />
+
+          <AccordionSection
+            title={t({ JP: '行政・地方自治体', EN: 'Administration & Local Governments' })}
+            sectionId="japanese"
+            color="green"
+            partners={japaneseAuthorities}
+          />
+
+          <AccordionSection
+            title={t({ JP: '国際機関', EN: 'International Organizations' })}
+            sectionId="international"
+            color="purple"
+            partners={internationalOrganizations}
+          />
+
+          <AccordionSection
+            title={t({ JP: 'その他の提携組織・プロジェクト', EN: 'Other Partner Organizations & Projects' })}
+            sectionId="other"
+            color="orange"
+            partners={otherPartners}
+          />
         </div>
       </div>
     </section>

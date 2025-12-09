@@ -5,7 +5,7 @@ import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import ProjectOverview from '@/components/ProjectOverview'
 import IndustryApproach from '@/components/IndustryApproach'
-import TeamMembers from '@/components/TeamMembers'
+
 import Partners from '@/components/Partners'
 import TokenInfo from '@/components/TokenInfo'
 import Footer from '@/components/Footer'
@@ -30,7 +30,7 @@ export default function HomePage() {
         <Hero />
         <ProjectOverview />
         <IndustryApproach />
-        <TeamMembers />
+
         <Partners />
         <TokenInfo />
         <Footer />
