@@ -250,15 +250,32 @@ const NewSectionsBentoWithMedia = () => {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {t.section0.themes.map((theme, index) => (
-              <div
-                key={index}
-                className="border-2 border-emerald-500/30 rounded-lg p-8 bg-black/50 hover:border-emerald-500/60 transition-all duration-300"
-              >
-                <div className="text-6xl font-bold text-emerald-400 mb-4">{index + 1}</div>
-                <p className="text-lg text-white/90">{theme}</p>
-              </div>
-            ))}
+            {t.section0.themes.map((theme, index) => {
+              const themeImages = [
+                '/media/theme-global-warming.png',
+                '/media/theme-chemical-health.png',
+                '/media/theme-protein-crisis.png',
+              ];
+              return (
+                <div
+                  key={index}
+                  className="border-2 border-emerald-500/30 rounded-lg overflow-hidden bg-black/50 hover:border-emerald-500/60 transition-all duration-300"
+                >
+                  <div className="relative w-full h-64">
+                    <Image
+                      src={themeImages[index]}
+                      alt={theme}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="text-6xl font-bold text-emerald-400 mb-4">{index + 1}</div>
+                    <p className="text-lg text-white/90">{theme}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           <div className="text-center">
@@ -398,6 +415,17 @@ const NewSectionsBentoWithMedia = () => {
 
           <h3 className="text-3xl font-bold mb-8 text-emerald-400">{t.section1_6.subtitle}</h3>
 
+          {/* SEF内部培養画像 */}
+          <div className="mb-12 rounded-lg overflow-hidden">
+            <Image
+              src="/media/sef-cultivation-interior.png"
+              alt="SEF Interior Cultivation"
+              width={1200}
+              height={675}
+              className="w-full h-auto rounded-xl"
+            />
+          </div>
+
           <div className="border-2 border-emerald-500/30 rounded-lg p-8 bg-black/50 mb-12">
             <ul className="space-y-4">
               {t.section1_6.features.map((feature, index) => (
@@ -462,6 +490,17 @@ const NewSectionsBentoWithMedia = () => {
             <h4 className="text-2xl font-bold text-emerald-400 mb-6">
               {language === 'JP' ? 'SEFで作られた Mother Vegetable' : 'Mother Vegetable Made in SEF'}
             </h4>
+
+            {/* Mother Vegetable製品画像 */}
+            <div className="mb-8 rounded-lg overflow-hidden">
+              <Image
+                src="/media/mother-vegetable-products.png"
+                alt="Mother Vegetable Products"
+                width={1200}
+                height={675}
+                className="w-full h-auto rounded-xl"
+              />
+            </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {t.section2.industries.map((industry, index) => (
