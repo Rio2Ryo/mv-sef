@@ -301,17 +301,6 @@ const NewSectionsBentoWithMedia = () => {
 
             <h3 className="text-3xl font-bold mb-6 text-emerald-400">{t.section1.subtitle}</h3>
 
-            {/* Mother Vegetable顕微鏡画像 */}
-            <div className="mb-8 rounded-lg overflow-hidden max-w-md mx-auto">
-              <Image
-                src="/media/mother-vegetable-cells.png"
-                alt="Mother Vegetable Microscopic View"
-                width={800}
-                height={400}
-                className="w-full h-auto rounded-xl"
-              />
-            </div>
-
             {t.section1.description.map((para, index) => (
               <p key={index} className="text-lg text-white/80 mb-4">
                 {para}
@@ -460,12 +449,12 @@ const NewSectionsBentoWithMedia = () => {
             </div>
 
             {/* SEF培養システム画像 */}
-            <div className="mb-8 rounded-lg overflow-hidden max-w-md mx-auto">
+            <div className="mb-8 rounded-lg overflow-hidden max-w-3xl mx-auto">
               <Image
-                src="/media/sef-cultivation-system.png"
+                src="/media/sef-cultivation-system-wide.png"
                 alt="SEF Cultivation System"
-                width={500}
-                height={500}
+                width={1200}
+                height={675}
                 className="w-full h-auto rounded-xl"
               />
             </div>
