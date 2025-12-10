@@ -243,13 +243,13 @@ const NewSectionsBentoWithMedia = () => {
   return (
     <div className="bg-black text-white">
       {/* Section 0: 我々が解決する3つのテーマ */}
-      <section className="py-20 px-6">
+      <section className="py-12 px-4 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-emerald-400">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 md:mb-12 lg:mb-16 text-emerald-400">
             {t.section0.title}
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
             {t.section0.themes.map((theme, index) => {
               const themeImages = [
                 '/media/theme-global-warming.png',
@@ -261,7 +261,7 @@ const NewSectionsBentoWithMedia = () => {
                   key={index}
                   className="border-2 border-emerald-500/30 rounded-lg overflow-hidden bg-black/50 hover:border-emerald-500/60 transition-all duration-300"
                 >
-                  <div className="relative w-full h-64">
+                  <div className="relative w-full aspect-[4/3] md:h-64">
                     <Image
                       src={themeImages[index]}
                       alt={theme}
@@ -269,9 +269,9 @@ const NewSectionsBentoWithMedia = () => {
                       className="object-cover"
                     />
                   </div>
-                  <div className="p-8">
-                    <div className="text-6xl font-bold text-emerald-400 mb-4">{index + 1}</div>
-                    <p className="text-lg text-white/90">{theme}</p>
+                  <div className="p-4 md:p-6 lg:p-8">
+                    <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-400 mb-2 md:mb-4">{index + 1}</div>
+                    <p className="text-sm md:text-base lg:text-lg text-white/90 leading-relaxed">{theme}</p>
                   </div>
                 </div>
               );
@@ -279,21 +279,21 @@ const NewSectionsBentoWithMedia = () => {
           </div>
 
           <div className="text-center">
-            <p className="text-2xl text-emerald-400 font-semibold">{t.section0.mission}</p>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-emerald-400 font-semibold px-4 leading-relaxed">{t.section0.mission}</p>
           </div>
         </div>
       </section>
 
       {/* Section 1: 35億年前、地球は赤い星だった */}
-      <section className="py-20 px-6">
+      <section className="py-12 px-4 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="border-2 border-emerald-500/30 rounded-lg p-12 bg-black/50 hover:border-emerald-500/60 transition-all duration-300">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-red-500">
+          <div className="border-2 border-emerald-500/30 rounded-lg p-6 md:p-8 lg:p-12 bg-black/50 hover:border-emerald-500/60 transition-all duration-300">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-red-500">
               {t.section1.title}
             </h2>
 
             {/* 古代地球の画像 */}
-            <div className="mb-8 rounded-lg overflow-hidden">
+            <div className="mb-6 md:mb-8 rounded-lg overflow-hidden">
               <Image
                 src="/media/ancient-earth-red.png"
                 alt="Ancient Earth"
@@ -303,23 +303,23 @@ const NewSectionsBentoWithMedia = () => {
               />
             </div>
 
-            <div className="flex flex-wrap gap-4 mb-6">
+            <div className="flex flex-wrap gap-2 md:gap-4 mb-4 md:mb-6">
               {t.section1.bullets.map((bullet, index) => (
                 <span
                   key={index}
-                  className="px-4 py-2 border border-red-500/50 rounded-full text-red-400"
+                  className="px-3 py-1.5 md:px-4 md:py-2 border border-red-500/50 rounded-full text-red-400 text-xs md:text-sm"
                 >
                   • {bullet}
                 </span>
               ))}
             </div>
 
-            <p className="text-lg text-white/80 mb-8">{t.section1.text1}</p>
+            <p className="text-sm md:text-base lg:text-lg text-white/80 mb-6 md:mb-8 leading-relaxed">{t.section1.text1}</p>
 
-            <h3 className="text-3xl font-bold mb-6 text-emerald-400">{t.section1.subtitle}</h3>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-emerald-400">{t.section1.subtitle}</h3>
 
             {t.section1.description.map((para, index) => (
-              <p key={index} className="text-lg text-white/80 mb-4">
+              <p key={index} className="text-sm md:text-base lg:text-lg text-white/80 mb-3 md:mb-4 leading-relaxed">
                 {para}
               </p>
             ))}
@@ -328,30 +328,30 @@ const NewSectionsBentoWithMedia = () => {
       </section>
 
       {/* Section 1.5: 地球を美しい姿へと戻すため */}
-      <section className="py-20 px-6">
+      <section className="py-12 px-4 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="border-2 border-emerald-500/30 rounded-lg p-12 bg-black/50 hover:border-emerald-500/60 transition-all duration-300">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-emerald-400">
+          <div className="border-2 border-emerald-500/30 rounded-lg p-6 md:p-8 lg:p-12 bg-black/50 hover:border-emerald-500/60 transition-all duration-300">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-emerald-400">
               {t.section1_5.title}
             </h2>
 
-            <p className="text-lg text-white/80 mb-8">{t.section1_5.text1}</p>
+            <p className="text-sm md:text-base lg:text-lg text-white/80 mb-6 md:mb-8 leading-relaxed">{t.section1_5.text1}</p>
 
             {/* CO2濃度表 */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
               {t.section1_5.co2Table.map((item, index) => (
                 <div
                   key={index}
-                  className="border border-emerald-500/30 rounded-lg p-6 bg-black/30 text-center"
+                  className="border border-emerald-500/30 rounded-lg p-4 md:p-6 bg-black/30 text-center"
                 >
-                  <div className="text-sm text-white/60 mb-2">{item.year}</div>
-                  <div className="text-2xl font-bold text-red-400">{item.ppm}</div>
+                  <div className="text-xs md:text-sm text-white/60 mb-1 md:mb-2">{item.year}</div>
+                  <div className="text-lg md:text-xl lg:text-2xl font-bold text-red-400">{item.ppm}</div>
                 </div>
               ))}
             </div>
 
             {/* CO2吸収コンセプト画像 */}
-            <div className="mb-8 rounded-lg overflow-hidden">
+            <div className="mb-6 md:mb-8 rounded-lg overflow-hidden">
               <Image
                 src="/media/co2-absorption-concept.png"
                 alt="CO2 Absorption Concept"
@@ -361,21 +361,21 @@ const NewSectionsBentoWithMedia = () => {
               />
             </div>
 
-            <p className="text-lg text-white/80 mb-4">{t.section1_5.text2}</p>
-            <p className="text-lg text-white/80">{t.section1_5.text3}</p>
+            <p className="text-sm md:text-base lg:text-lg text-white/80 mb-3 md:mb-4 leading-relaxed">{t.section1_5.text2}</p>
+            <p className="text-sm md:text-base lg:text-lg text-white/80 leading-relaxed">{t.section1_5.text3}</p>
           </div>
         </div>
       </section>
 
       {/* Section 1.6: Small Earth Factory（SEF） */}
-      <section className="py-20 px-6">
+      <section className="py-12 px-4 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-emerald-400">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 md:mb-12 lg:mb-16 text-emerald-400">
             {t.section1_6.title}
           </h2>
 
           {/* SEF外観画像 */}
-          <div className="mb-12 rounded-lg overflow-hidden">
+          <div className="mb-8 md:mb-12 rounded-lg overflow-hidden">
             <Image
               src="/media/sef-exterior.png"
               alt="SEF Exterior"
@@ -386,23 +386,23 @@ const NewSectionsBentoWithMedia = () => {
           </div>
 
           {/* 3つのゼロ */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
             {t.section1_6.threeZeros.map((zero, index) => (
               <div
                 key={index}
-                className="border-2 border-emerald-500/30 rounded-lg p-8 bg-black/50 hover:border-emerald-500/60 transition-all duration-300 text-center"
+                className="border-2 border-emerald-500/30 rounded-lg p-4 md:p-6 lg:p-8 bg-black/50 hover:border-emerald-500/60 transition-all duration-300 text-center"
               >
-                <div className="text-2xl font-bold text-emerald-400">{zero}</div>
+                <div className="text-base md:text-lg lg:text-2xl font-bold text-emerald-400">{zero}</div>
               </div>
             ))}
           </div>
 
-          <p className="text-lg text-white/80 mb-4 text-center">{t.section1_6.text1}</p>
-          <p className="text-lg text-white/80 mb-12 text-center">{t.section1_6.text2}</p>
+          <p className="text-sm md:text-base lg:text-lg text-white/80 mb-3 md:mb-4 text-center leading-relaxed px-4">{t.section1_6.text1}</p>
+          <p className="text-sm md:text-base lg:text-lg text-white/80 mb-8 md:mb-12 text-center leading-relaxed px-4">{t.section1_6.text2}</p>
 
 
           {/* SEF内部構造の動画 */}
-          <div className="mb-12 rounded-lg overflow-hidden">
+          <div className="mb-8 md:mb-12 rounded-lg overflow-hidden">
             <video
               controls
               className="w-full h-auto rounded-xl"
@@ -413,10 +413,10 @@ const NewSectionsBentoWithMedia = () => {
             </video>
           </div>
 
-          <h3 className="text-3xl font-bold mb-8 text-emerald-400">{t.section1_6.subtitle}</h3>
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-emerald-400">{t.section1_6.subtitle}</h3>
 
           {/* SEF内部培養画像 */}
-          <div className="mb-12 rounded-lg overflow-hidden">
+          <div className="mb-8 md:mb-12 rounded-lg overflow-hidden">
             <Image
               src="/media/sef-cultivation-interior.png"
               alt="SEF Interior Cultivation"
@@ -426,26 +426,26 @@ const NewSectionsBentoWithMedia = () => {
             />
           </div>
 
-          <div className="border-2 border-emerald-500/30 rounded-lg p-8 bg-black/50 mb-12">
-            <ul className="space-y-4">
+          <div className="border-2 border-emerald-500/30 rounded-lg p-4 md:p-6 lg:p-8 bg-black/50 mb-8 md:mb-12">
+            <ul className="space-y-3 md:space-y-4">
               {t.section1_6.features.map((feature, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="text-emerald-400 mr-3">✓</span>
-                  <span className="text-white/80">{feature}</span>
+                  <span className="text-emerald-400 mr-2 md:mr-3 text-sm md:text-base">✓</span>
+                  <span className="text-white/80 text-sm md:text-base leading-relaxed">{feature}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* SEFが解決できること */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             {t.section1_6.solutions.map((solution, index) => (
               <div
                 key={index}
-                className="border-2 border-emerald-500/30 rounded-lg p-8 bg-black/50 hover:border-emerald-500/60 transition-all duration-300"
+                className="border-2 border-emerald-500/30 rounded-lg p-4 md:p-6 lg:p-8 bg-black/50 hover:border-emerald-500/60 transition-all duration-300"
               >
-                <h4 className="text-xl font-bold text-emerald-400 mb-4">{solution.title}</h4>
-                <p className="text-white/80">{solution.text}</p>
+                <h4 className="text-lg md:text-xl font-bold text-emerald-400 mb-3 md:mb-4">{solution.title}</h4>
+                <p className="text-white/80 text-sm md:text-base leading-relaxed">{solution.text}</p>
               </div>
             ))}
           </div>
@@ -453,31 +453,31 @@ const NewSectionsBentoWithMedia = () => {
       </section>
 
       {/* Section 2: どこでも建設可能 */}
-      <section className="py-20 px-6">
+      <section className="py-12 px-4 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-emerald-400">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6 md:mb-8 text-emerald-400">
             {t.section2.title}
           </h2>
-          <h3 className="text-2xl font-semibold text-center mb-12 text-white/90">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-center mb-8 md:mb-12 text-white/90 px-4">
             {t.section2.subtitle}
           </h3>
 
-          <div className="border-2 border-emerald-500/30 rounded-lg p-12 bg-black/50 mb-12">
-            <p className="text-lg text-white/80 mb-6">{t.section2.text1}</p>
+          <div className="border-2 border-emerald-500/30 rounded-lg p-6 md:p-8 lg:p-12 bg-black/50 mb-8 md:mb-12">
+            <p className="text-sm md:text-base lg:text-lg text-white/80 mb-4 md:mb-6 leading-relaxed">{t.section2.text1}</p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
               {t.section2.stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="border border-emerald-500/30 rounded-lg p-6 bg-black/30 text-center"
+                  className="border border-emerald-500/30 rounded-lg p-4 md:p-6 bg-black/30 text-center"
                 >
-                  <p className="text-lg text-emerald-400">{stat}</p>
+                  <p className="text-sm md:text-base lg:text-lg text-emerald-400">{stat}</p>
                 </div>
               ))}
             </div>
 
             {/* SEF培養システム画像 */}
-            <div className="mb-8 rounded-lg overflow-hidden max-w-3xl mx-auto">
+            <div className="mb-6 md:mb-8 rounded-lg overflow-hidden max-w-3xl mx-auto">
               <Image
                 src="/media/sef-cultivation-system-wide.png"
                 alt="SEF Cultivation System"
@@ -487,12 +487,12 @@ const NewSectionsBentoWithMedia = () => {
               />
             </div>
 
-            <h4 className="text-2xl font-bold text-emerald-400 mb-6">
+            <h4 className="text-xl sm:text-2xl font-bold text-emerald-400 mb-4 md:mb-6">
               {language === 'JP' ? 'SEFで作られた Mother Vegetable' : 'Mother Vegetable Made in SEF'}
             </h4>
 
             {/* Mother Vegetable製品画像 */}
-            <div className="mb-8 rounded-lg overflow-hidden">
+            <div className="mb-6 md:mb-8 rounded-lg overflow-hidden">
               <Image
                 src="/media/mother-vegetable-products.png"
                 alt="Mother Vegetable Products"
@@ -502,29 +502,29 @@ const NewSectionsBentoWithMedia = () => {
               />
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6 md:mb-8">
               {t.section2.industries.map((industry, index) => (
                 <div
                   key={index}
-                  className="border border-emerald-500/30 rounded-lg p-4 bg-black/30 text-center text-sm text-white/80"
+                  className="border border-emerald-500/30 rounded-lg p-3 md:p-4 bg-black/30 text-center text-xs md:text-sm text-white/80"
                 >
                   {industry}
                 </div>
               ))}
             </div>
 
-            <p className="text-lg text-emerald-400 font-semibold text-center">
+            <p className="text-base sm:text-lg md:text-xl text-emerald-400 font-semibold text-center leading-relaxed px-4">
               {t.section2.doubleIncome}
             </p>
           </div>
 
           {/* 世界へ広がるSEF */}
-          <h3 className="text-3xl font-bold mb-8 text-emerald-400 text-center">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-emerald-400 text-center">
             {language === 'JP' ? '世界へ広がるSEF' : 'SEF Expanding Globally'}
           </h3>
 
           {/* グローバルネットワーク画像 */}
-          <div className="mb-12 rounded-lg overflow-hidden">
+          <div className="mb-8 md:mb-12 rounded-lg overflow-hidden">
             <Image
               src="/media/global-sef-network.png"
               alt="Global SEF Network"
@@ -534,21 +534,21 @@ const NewSectionsBentoWithMedia = () => {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="border-2 border-emerald-500/30 rounded-lg p-8 bg-black/50 hover:border-emerald-500/60 transition-all duration-300">
-              <h4 className="text-2xl font-bold text-emerald-400 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <div className="border-2 border-emerald-500/30 rounded-lg p-4 md:p-6 lg:p-8 bg-black/50 hover:border-emerald-500/60 transition-all duration-300">
+              <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-emerald-400 mb-3 md:mb-4">
                 {t.section2.locations.malaysia.title}
               </h4>
-              <p className="text-white/80">{t.section2.locations.malaysia.text}</p>
+              <p className="text-white/80 text-sm md:text-base leading-relaxed">{t.section2.locations.malaysia.text}</p>
             </div>
 
-            <div className="border-2 border-emerald-500/30 rounded-lg p-8 bg-black/50 hover:border-emerald-500/60 transition-all duration-300">
-              <h4 className="text-2xl font-bold text-emerald-400 mb-4">
+            <div className="border-2 border-emerald-500/30 rounded-lg p-4 md:p-6 lg:p-8 bg-black/50 hover:border-emerald-500/60 transition-all duration-300">
+              <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-emerald-400 mb-3 md:mb-4">
                 {t.section2.locations.japan.title}
               </h4>
               <ul className="space-y-2">
                 {t.section2.locations.japan.items.map((item, index) => (
-                  <li key={index} className="text-white/80">• {item}</li>
+                  <li key={index} className="text-white/80 text-sm md:text-base">• {item}</li>
                 ))}
               </ul>
             </div>

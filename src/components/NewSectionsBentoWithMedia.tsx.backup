@@ -250,15 +250,32 @@ const NewSectionsBentoWithMedia = () => {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {t.section0.themes.map((theme, index) => (
-              <div
-                key={index}
-                className="border-2 border-emerald-500/30 rounded-lg p-8 bg-black/50 hover:border-emerald-500/60 transition-all duration-300"
-              >
-                <div className="text-6xl font-bold text-emerald-400 mb-4">{index + 1}</div>
-                <p className="text-lg text-white/90">{theme}</p>
-              </div>
-            ))}
+            {t.section0.themes.map((theme, index) => {
+              const themeImages = [
+                '/media/theme-global-warming.png',
+                '/media/theme-chemical-health.png',
+                '/media/theme-protein-crisis.png',
+              ];
+              return (
+                <div
+                  key={index}
+                  className="border-2 border-emerald-500/30 rounded-lg overflow-hidden bg-black/50 hover:border-emerald-500/60 transition-all duration-300"
+                >
+                  <div className="relative w-full h-64">
+                    <Image
+                      src={themeImages[index]}
+                      alt={theme}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="text-6xl font-bold text-emerald-400 mb-4">{index + 1}</div>
+                    <p className="text-lg text-white/90">{theme}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           <div className="text-center">
@@ -279,10 +296,10 @@ const NewSectionsBentoWithMedia = () => {
             <div className="mb-8 rounded-lg overflow-hidden">
               <Image
                 src="/media/ancient-earth-red.png"
-                alt="Ancient Earth 3.5 billion years ago"
-                width={1200}
-                height={600}
-                className="w-full h-auto"
+                alt="Ancient Earth"
+                width={500}
+                height={500}
+                className="w-full h-auto rounded-xl"
               />
             </div>
 
@@ -300,17 +317,6 @@ const NewSectionsBentoWithMedia = () => {
             <p className="text-lg text-white/80 mb-8">{t.section1.text1}</p>
 
             <h3 className="text-3xl font-bold mb-6 text-emerald-400">{t.section1.subtitle}</h3>
-
-            {/* Mother Vegetable顕微鏡画像 */}
-            <div className="mb-8 rounded-lg overflow-hidden max-w-md mx-auto">
-              <Image
-                src="/media/mother-vegetable-microscopic.png"
-                alt="Mother Vegetable microscopic view"
-                width={600}
-                height={600}
-                className="w-full h-auto"
-              />
-            </div>
 
             {t.section1.description.map((para, index) => (
               <p key={index} className="text-lg text-white/80 mb-4">
@@ -348,10 +354,10 @@ const NewSectionsBentoWithMedia = () => {
             <div className="mb-8 rounded-lg overflow-hidden">
               <Image
                 src="/media/co2-absorption-concept.png"
-                alt="CO2 absorption concept"
-                width={1200}
-                height={600}
-                className="w-full h-auto"
+                alt="CO2 Absorption Concept"
+                width={800}
+                height={400}
+                className="w-full h-auto rounded-xl"
               />
             </div>
 
@@ -372,10 +378,10 @@ const NewSectionsBentoWithMedia = () => {
           <div className="mb-12 rounded-lg overflow-hidden">
             <Image
               src="/media/sef-exterior.png"
-              alt="Small Earth Factory exterior"
-              width={1400}
-              height={700}
-              className="w-full h-auto"
+              alt="SEF Exterior"
+              width={900}
+              height={450}
+              className="w-full h-auto rounded-xl"
             />
           </div>
 
@@ -394,22 +400,12 @@ const NewSectionsBentoWithMedia = () => {
           <p className="text-lg text-white/80 mb-4 text-center">{t.section1_6.text1}</p>
           <p className="text-lg text-white/80 mb-12 text-center">{t.section1_6.text2}</p>
 
-          {/* SEF内部構造画像 */}
-          <div className="mb-12 rounded-lg overflow-hidden">
-            <Image
-              src="/media/sef-interior.png"
-              alt="Small Earth Factory interior structure"
-              width={1400}
-              height={800}
-              className="w-full h-auto"
-            />
-          </div>
 
           {/* SEF内部構造の動画 */}
           <div className="mb-12 rounded-lg overflow-hidden">
             <video
               controls
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto rounded-xl"
               poster="/media/sef-interior.png"
             >
               <source src="/media/sef-structure.mp4" type="video/mp4" />
@@ -418,6 +414,17 @@ const NewSectionsBentoWithMedia = () => {
           </div>
 
           <h3 className="text-3xl font-bold mb-8 text-emerald-400">{t.section1_6.subtitle}</h3>
+
+          {/* SEF内部培養画像 */}
+          <div className="mb-12 rounded-lg overflow-hidden">
+            <Image
+              src="/media/sef-cultivation-interior.png"
+              alt="SEF Interior Cultivation"
+              width={1200}
+              height={675}
+              className="w-full h-auto rounded-xl"
+            />
+          </div>
 
           <div className="border-2 border-emerald-500/30 rounded-lg p-8 bg-black/50 mb-12">
             <ul className="space-y-4">
@@ -469,20 +476,31 @@ const NewSectionsBentoWithMedia = () => {
               ))}
             </div>
 
-            {/* 投資成長画像 */}
-            <div className="mb-8 rounded-lg overflow-hidden max-w-md mx-auto">
+            {/* SEF培養システム画像 */}
+            <div className="mb-8 rounded-lg overflow-hidden max-w-3xl mx-auto">
               <Image
-                src="/media/investment-growth.png"
-                alt="Investment growth concept"
-                width={600}
-                height={600}
-                className="w-full h-auto"
+                src="/media/sef-cultivation-system-wide.png"
+                alt="SEF Cultivation System"
+                width={1200}
+                height={675}
+                className="w-full h-auto rounded-xl"
               />
             </div>
 
             <h4 className="text-2xl font-bold text-emerald-400 mb-6">
               {language === 'JP' ? 'SEFで作られた Mother Vegetable' : 'Mother Vegetable Made in SEF'}
             </h4>
+
+            {/* Mother Vegetable製品画像 */}
+            <div className="mb-8 rounded-lg overflow-hidden">
+              <Image
+                src="/media/mother-vegetable-products.png"
+                alt="Mother Vegetable Products"
+                width={1200}
+                height={675}
+                className="w-full h-auto rounded-xl"
+              />
+            </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {t.section2.industries.map((industry, index) => (
@@ -509,10 +527,10 @@ const NewSectionsBentoWithMedia = () => {
           <div className="mb-12 rounded-lg overflow-hidden">
             <Image
               src="/media/global-sef-network.png"
-              alt="Global SEF network"
-              width={1200}
-              height={600}
-              className="w-full h-auto"
+              alt="Global SEF Network"
+              width={800}
+              height={400}
+              className="w-full h-auto rounded-xl"
             />
           </div>
 
