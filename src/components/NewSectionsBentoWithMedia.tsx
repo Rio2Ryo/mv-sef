@@ -418,7 +418,7 @@ const NewSectionsBentoWithMedia = () => {
           {/* SEF内部培養画像 */}
           <div className="mb-8 md:mb-12 rounded-lg overflow-hidden">
             <Image
-              src="/media/sef-cultivation-interior.png"
+              src="/media/sef-cultivation-interior-v2.png"
               alt="SEF Interior Cultivation"
               width={1200}
               height={675}
@@ -479,7 +479,7 @@ const NewSectionsBentoWithMedia = () => {
             {/* SEF培養システム画像 */}
             <div className="mb-6 md:mb-8 rounded-lg overflow-hidden max-w-3xl mx-auto">
               <Image
-                src="/media/sef-cultivation-system-wide.png"
+                src="/media/sef-cultivation-system-v2.png"
                 alt="SEF Cultivation System"
                 width={1200}
                 height={675}
